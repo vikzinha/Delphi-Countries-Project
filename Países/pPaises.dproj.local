@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/09/08 18:57:27.000.148,=C:\Users\vicvi\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/09/08 19:08:12.000.681,=C:\Users\vicvi\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/09/08 19:09:48.000.121,C:\Users\vicvi\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\vicvi\Documents\Salesiano\Delphi\Projetos\Países\uPaises.pas</Transaction>
+    <Transaction>2023/09/08 19:09:48.000.121,C:\Users\vicvi\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\vicvi\Documents\Salesiano\Delphi\Projetos\Países\uPaises.dfm</Transaction>
+    <Transaction>2023/09/08 19:09:57.000.769,C:\Users\vicvi\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\vicvi\Documents\Salesiano\Delphi\Projetos\Países\pPaises.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

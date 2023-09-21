@@ -1,0 +1,66 @@
+unit uPaises;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.FMTBcd, Data.DBXFirebird,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, Data.SqlExpr,
+  Datasnap.DBClient, SimpleDS;
+
+type
+  TfrmPaises = class(TForm)
+    lblPais: TLabel;
+    lblCapital: TLabel;
+    lblContinente: TLabel;
+    cnxPaises: TSQLConnection;
+    dsPaises: TDataSource;
+    dbePais: TDBEdit;
+    dbeCapital: TDBEdit;
+    dbeContinente: TDBEdit;
+    dbnPaises: TDBNavigator;
+    lblArea: TLabel;
+    lblPopulacao: TLabel;
+    dbeArea: TDBEdit;
+    dbePopulacao: TDBEdit;
+    qryPaises: TSQLQuery;
+    qryPaisesNOME: TStringField;
+    qryPaisesCAPITAL: TStringField;
+    qryPaisesCONTINENTE: TStringField;
+    qryPaisesAREA: TLargeintField;
+    qryPaisesPOPULACAO: TLargeintField;
+    lblDensidade: TLabel;
+    dbeDensidade: TDBEdit;
+    qryPaisesDensidade: TFloatField;
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure qryPaisesCalcFields(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPaises: TfrmPaises;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPaises.FormActivate(Sender: TObject);
+begin
+  qryPaises.Open;
+end;
+
+procedure TfrmPaises.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  qryPaises.Close;
+end;
+
+procedure TfrmPaises.qryPaisesCalcFields(DataSet: TDataSet);
+begin
+      qryPaisesDensidade.Value :=  qryPaisesPOPULACAO.Value / qryPaisesAREA.Value;
+end;
+
+end.

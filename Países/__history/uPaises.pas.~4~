@@ -1,0 +1,47 @@
+unit uPaises;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.FMTBcd, Data.DBXFirebird,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, Data.SqlExpr;
+
+type
+  TfrmPaises = class(TForm)
+    lblPais: TLabel;
+    lblCapital: TLabel;
+    lblContinente: TLabel;
+    tblPaises: TSQLTable;
+    cnxPaises: TSQLConnection;
+    dsPaises: TDataSource;
+    dbePais: TDBEdit;
+    dbeCapital: TDBEdit;
+    dbeContinente: TDBEdit;
+    dbnPaises: TDBNavigator;
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPaises: TfrmPaises;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPaises.FormActivate(Sender: TObject);
+begin
+  tblPaises.Open;
+end;
+
+procedure TfrmPaises.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  tblPaises.Close;
+end;
+
+end.
